@@ -1,7 +1,58 @@
-.shape {
+/* .shape {
   height: 0;
   width: 0;
   border-bottom: 30px solid black;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
+} */
+
+@keyframes light {
+  50% {
+    transform: translate3d(50%, 50%, 0);
+  }
+}
+
+.st0 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+
+.textEffect {
+  overflow: hidden;
+  position: relative;
+  filter: contrast(150%);
+}
+
+.logo {
+  position: relative;
+  background: black;
+  color: transparent;
+  user-select: none;
+  transform: scale(1.01);
+  filter: blur(0.05rem);
+}
+
+.gradient,
+.spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.gradient {
+  background: linear-gradient(-45deg, white, black);
+  mix-blend-mode: multiply;
+}
+
+.spotlight {
+  animation: light 30s infinite ease-in-out;
+  transform: rotate(-15deg) scale(1.2);
+  background: radial-gradient(circle, white, transparent 35%) 0 0 / 40% 40%,
+    radial-gradient(circle, white, black 65%) 50% 50% / 20% 20%;
+  top: -100%;
+  left: -100%;
+  mix-blend-mode: color-dodge;
 }
